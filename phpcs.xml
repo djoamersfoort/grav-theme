@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset name="DJO Theme">
+  <description>
+    Handles applying the correct rules for the Grav theme.
+  </description>
+
+  <!-- Directories -->
+  <file>templates/</file>
+  <file>blueprints/</file>
+  <file>partials/</file>
+
+  <!-- Files -->
+  <file>djoamersfoort.php</file>
+
+  <!-- We just use PSR-2 -->
+  <rule ref="PSR2"/>
+
+  <!-- Configs -->
+  <arg name="colors"/>
+
+</ruleset>

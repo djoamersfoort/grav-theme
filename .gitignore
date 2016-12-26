@@ -1,0 +1,6 @@
+# Sourced from https://github.com/github/gitignore
+
+npm-debug.log*
+.grunt
+node_modules
+
