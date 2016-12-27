@@ -1,0 +1,34 @@
+engines:
+    phpcodesniffer:
+        enabled: true
+        config:
+            standard: PSR2
+            file_extensions: php
+    phpmd:
+        enabled: false
+    duplication:
+        enabled: true
+        config:
+            languages:
+                - javascript
+                - php
+                - scss
+    eslint:
+        enabled: true
+        channel: "eslint-2"
+        config:
+            config: ./.eslintrc
+    scss-lint:
+        enabled: true
+
+ratings:
+    paths:
+        - "js/**.js"
+        - "scss/**.scss"
+        - "blueprints/**.php"
+        - "templates/**.php"
+        - "djo-amersfoort.php"
+        - "Gruntfile.js"
+    exclude_paths:
+        - css-compiled/
+        - fonts/
