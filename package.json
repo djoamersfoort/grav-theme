@@ -1,0 +1,34 @@
+{
+  "name": "djoamersfoort-theme",
+  "description": "DJO-branded theme for Grav",
+  "version": "1.0.0",
+  "license": "GPL-3.0",
+  "author": "Roelof Roos <github@roelof.io>",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/djoamersfoort/grav-theme.git"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "bootstrap": "^4.0.0-alpha.5",
+    "es6-promise": "^4.0.0",
+    "eslint": "^3.10.0",
+    "eslint-config-google": "^0.7.0",
+    "grunt": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^19.0.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^1.2.0",
+    "grunt-sass-lint": "^0.2.0",
+    "jquery": "^3.1.0",
+    "postcss-flexbugs-fixes": "^2.0.0",
+    "sass-lint": "^1.10.0",
+    "tether": "^1.3.7"
+  }
+}
