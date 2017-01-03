@@ -32,3 +32,5 @@ ratings:
     exclude_paths:
         - css-compiled/
         - fonts/
+        - "js/theme.min.js"
+        - "js/theme-vendor.min.js"
