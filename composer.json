@@ -1,0 +1,14 @@
+{
+    "name": "djoamersfoort/grav-theme",
+    "description": "DJO-branded theme for Grav",
+    "license": "LGPL-3.0",
+    "authors": [
+        {
+            "name": "Roelof Roos",
+            "email": "github@roelof.io"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    }
+}
