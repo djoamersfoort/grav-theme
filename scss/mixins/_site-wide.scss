@@ -1,0 +1,12 @@
+//
+// Makes a module the entire width of the site.
+//
+
+@mixin site-wide {
+    padding: $grid-gutter 0;
+
+    &__content {
+        @include make-container;
+        @include make-container-max-widths;
+    }
+}

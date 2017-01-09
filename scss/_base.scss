@@ -1,0 +1,18 @@
+//
+// Loads all general, shared components
+//
+// @author Roelof Roos <github@roelof.io>
+// @license LGPL-3.0
+//
+
+// Load basic styling rules
+@import 'base/body';
+
+// Load basic page components
+@import 'base/header';
+// @import 'base/leader' optional;
+@import 'base/content';
+// @import 'base/footer' optional;
+
+// Load more specific components
+// @import 'base/page-cover' optional;

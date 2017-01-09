@@ -1,0 +1,75 @@
+//
+// Variables
+//
+// @author Roelof Roos <github@roelof.io>
+// @license LGPL-3.0
+//
+
+// Pre-assign Bootstrap variables
+$font-size-root: 16px;
+$navbar-brand-padding-y: rem(4px);
+
+// Colours
+// Prime colours
+$c-blue-brand:  rgb(24, 15, 117); // #180f75
+$c-white:       rgb(255, 255, 255); // #ffffff
+$c-black:       rgb(40, 40, 40); // #282828
+$c-red:         rgb(255, 0, 0); // #ff0000
+$c-grey:        rgb(136, 136, 136); // #888888
+
+// Variations
+$c-blue-light:  lighten(desaturate($c-blue-brand, 15.4), 7.1); // #202088
+$c-grey-light:  lighten($c-grey, 25); // #c8c8c8
+$c-grey-dark:   darken($c-grey, 17.6); //#5b5b5b
+$c-dark:        darken($c-black, 2.4); // #222222
+
+// Adaptations
+$c-grey-white:  lighten($c-grey-light, 40);
+
+// Transparent colours
+$c-black-t25:       transparentize($c-black, .25);
+$c-black-t50:       transparentize($c-black, .5);
+$c-black-t75:       transparentize($c-black, .75);
+
+$c-grey-t25:        transparentize($c-grey, .25);
+$c-grey-t50:        transparentize($c-grey, .5);
+$c-grey-t75:        transparentize($c-grey, .75);
+
+$c-white-t25:       transparentize($c-white, .25);
+$c-white-t50:       transparentize($c-white, .5);
+$c-white-t75:       transparentize($c-white, .75);
+
+$c-blue-brand-t25:  transparentize($c-blue-brand, .25);
+$c-blue-brand-t50:  transparentize($c-blue-brand, .5);
+$c-blue-brand-t75:  transparentize($c-blue-brand, .75);
+
+// DIMENSIONS
+$grid-gutter: rem(20px);
+
+// General elements
+$page-header-height: rem(300px);
+$page-header-height-small: rem(150px);
+
+// Navbar
+$navbar-brand-size: rem(30px);
+$navbar-brand-size-large: $navbar-brand-size * 2;
+$navbar-item-bottom-border: 4px;
+
+//
+// BOOTSTRAP 4
+//
+$brand-primary: $c-blue-brand;
+$link-color: lighten($c-blue-light, 25);
+$enable-flex: true;
+
+//
+// DEPRECATED
+//
+
+// Bright pink as deprecated color
+$c-deprecated: rgb(255, 0, 255);
+
+$c-blue: $c-deprecated;
+$c-trans25-blue: $c-deprecated;
+$c-trans50-blue: $c-deprecated;
+$c-trans75-blue: $c-deprecated;

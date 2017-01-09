@@ -1,0 +1,26 @@
+//
+// pixels to rem conversion
+//
+// Some tweaks by me
+//
+
+$font-size-root: 16px default;
+
+//
+// Converts pixels to rem units, as a length
+//
+// @author Fiona Chan <http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/>
+// @link http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/
+// @link (mirror) https://archive.is/tv702
+//
+// Patched to return a Length instead of a String, as adviced by Hugo Giraudel
+// @link http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/#comment-33
+// @link (mirror) https://archive.is/NUnTP
+//
+// @param {Length} pixel size
+// @return {Length} rem size
+//
+@function rem($size) {
+    $rem-size: $size / $font-size-root;
+    @return $rem-size * 1rem;
+}

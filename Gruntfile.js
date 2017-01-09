@@ -61,7 +61,7 @@ module.exports = function(grunt) {
         eslintconfig: '.eslintrc.json',
         sass: {
             'cache/theme.css': [
-                'scss/main.scss'
+                'scss/theme.scss'
             ]
         },
         sasslint: [
@@ -142,12 +142,14 @@ module.exports = function(grunt) {
 
         // Sass compiler
         sass: {
+            options: {
+                indentWidth: 4,
+                banner: bannerText,
+                outputStyle: 'nested'
+            },
             prod: {
                 files: files.sass,
                 options: {
-                    indentWidth: 4,
-                    banner: bannerText,
-                    outputStyle: 'nested',
                     roundingPrecision: 4,
                     keepSpecialComments: 0,
                     processImportFrom: ['local']
@@ -157,9 +159,6 @@ module.exports = function(grunt) {
             dev: {
                 files: files.sass,
                 options: {
-                    indentWidth: 4,
-                    banner: bannerText,
-                    outputStyle: 'nested',
                     roundingPrecision: -1,
                     sourceComments: true
                 }

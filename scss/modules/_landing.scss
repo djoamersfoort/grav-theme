@@ -1,0 +1,55 @@
+//
+// Landing module
+//
+
+.mod-landing {
+    @include site-wide;
+
+    display: flex;
+    color: $c-white;
+    background-color: $c-blue-light;
+
+    border-color: mix($c-white, $c-blue-brand, 50%);
+
+    &--branded {
+        background-image: url('../images/landing-brand.svg');
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+
+        height: 35vh;
+        max-height: 30rem;
+        min-height: 12rem;
+
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &__header,
+    &__body {
+        @include media-breakpoint-up(md) {
+            max-width: 80%;
+        }
+        @include media-breakpoint-up(lg) {
+            max-width: 50%;
+        }
+    }
+
+    &__header {
+        @include display-3;
+
+        margin: 0 1.5rem 0 0;
+    }
+
+    &__body {
+        margin: 0;
+        color: $c-white-t25;
+    }
+}

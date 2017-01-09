@@ -1,0 +1,13 @@
+//
+// Main content
+//
+
+.site-content {
+    padding: $grid-gutter * .5 0;
+    background-color: $c-white;
+
+    &__body {
+        @include make-container;
+        @include make-container-max-widths;
+    }
+}

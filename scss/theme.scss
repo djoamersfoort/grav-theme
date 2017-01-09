@@ -1,0 +1,28 @@
+//
+// Contains the main theme
+//
+// @author Roelof Roos <github@roelof.io>
+// @license LGPL-3.0
+//
+
+// Load functions and mixins
+@import 'functions';
+
+// Load variables
+@import 'variables';
+
+// Load bootstrap and others
+@import 'vendor';
+
+// Load our mixins
+@import 'mixins';
+
+// Load base stylesheets
+@import 'base';
+
+// Load stylesheets for pages and modules
+@import 'pages';
+@import 'modules';
+
+// Load small tweaks that override other behaviour
+@import 'tweaks';

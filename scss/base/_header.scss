@@ -1,0 +1,119 @@
+//
+// Header / navbar styling
+//
+
+.site-header {
+
+    display: block;
+    padding: 1em 0;
+    background-color: $c-blue-brand;
+
+    &--home {
+        background-color: transparent;
+    }
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+
+    &__container {
+        @include make-container;
+        @include make-container-max-widths;
+
+        display: flex;
+        align-items: center;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    &__brand {
+        order: 1;
+        min-height: 1;
+    }
+
+    &__nav-top {
+        order: 2;
+        min-height: 1;
+    }
+}
+
+.site-nav {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    &__item {
+        @extend .nav-item;
+    }
+
+    &__link {
+        display: block;
+        padding: $nav-link-padding;
+
+        color: $c-white;
+        background-color: none;
+        border: 0 solid transparent;
+        border-bottom-width: $navbar-item-bottom-border;
+
+        transition: border-bottom-color .25s;
+
+        @include hover-focus {
+            color: $c-white;
+            text-decoration: none;
+            border-color: $c-white-t75;
+        }
+
+        &:active,
+        &--active,
+        &--active:focus,
+        &--active:hover {
+            color: $c-white;
+            cursor: default;
+            border-color: $c-white-t25;
+        }
+    }
+}
+
+.site-nav__dropdown {
+    top: calc(100% + 1rem);
+    margin-top: 0;
+
+    color: $c-white;
+    background-color: $c-blue-brand;
+    border-width: 0;
+    border-radius: 0;
+
+    .dropdown-item {
+        color: $c-white;
+
+        @include hover-focus {
+            color: $c-white;
+            background-color: $c-black-t50;
+        };
+    }
+
+    .dropdown-divider {
+        background-color: $c-white-t50;
+    }
+}
+
+// .navbar--mobile {
+//     background-color: $c-blue-brand;
+//
+//     @include media-breakpoint-up(md) {
+//         display: none;
+//     };
+// }
+
+.site-header__brand {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    &-logo {
+        width: 274px;
+        height: 60px;
+        margin-right: 1.5rem;
+    }
+}
