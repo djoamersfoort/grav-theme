@@ -63,3 +63,10 @@ rules:
     - 2
     - convention: hyphenatedlowercase
     - allow-leading-underscore: false
+  mixins-before-declarations:
+    - 2
+    - exclude:
+      - media-breakpoint-up
+      - media-breakpoint-down
+      - media-breakpoint-only
+      - hover-focus
