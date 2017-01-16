@@ -1,0 +1,32 @@
+//
+// "Skip to content" button
+//
+
+.site-skip-to-content {
+    @include sr-only;
+
+    z-index: 20;
+    padding: .5rem 1rem;
+
+    color: $c-white;
+    text-align: center;
+    background-color: $c-black;
+
+    @include hover-focus-active {
+        color: $c-white;
+        text-decoration: underline;
+    }
+
+    &:focus,
+    &:active {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100vw;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+    }
+}

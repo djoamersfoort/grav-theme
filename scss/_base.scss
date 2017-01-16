@@ -14,5 +14,8 @@
 @import 'base/content';
 @import 'base/footer';
 
+// Load standalone elements
+@import 'base/skip-to-content';
+
 // Load more specific components
 // @import 'base/page-cover' optional;
