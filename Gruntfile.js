@@ -172,7 +172,7 @@ module.exports = function(grunt) {
                 options: {
                     map: {
                         inline: false,
-                        annotation: 'static/maps'
+                        annotation: 'cache/maps'
                     },
                     processors: plugins
                 }
