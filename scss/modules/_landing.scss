@@ -24,9 +24,18 @@
         flex-flow: column nowrap;
         justify-content: flex-end;
 
-        height: 35vh;
-        max-height: 30rem;
-        min-height: 12rem;
+        @include media-breakpoint-up(sm) {
+            height: 27.5vh;
+            min-height: 12rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: 30vh;
+        }
+
+        @include media-breakpoint-up(xl) {
+            height: 35vh;
+        }
 
         padding-top: 2rem;
         padding-bottom: 2rem;
@@ -45,7 +54,7 @@
     &__header {
         @include display-3;
 
-        margin: 0 1.5rem 0 0;
+        margin: 0 0 .5rem 0;
     }
 
     &__body {

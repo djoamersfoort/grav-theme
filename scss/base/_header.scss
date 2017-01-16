@@ -107,13 +107,7 @@
 // }
 
 .site-header__brand {
-    display: flex;
-    padding: 0;
-    margin: 0;
+    @include make-brand;
 
-    &-logo {
-        width: 274px;
-        height: 60px;
-        margin-right: 1.5rem;
-    }
+    display: flex;
 }

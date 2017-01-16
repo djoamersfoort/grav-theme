@@ -69,4 +69,6 @@ rules:
       - media-breakpoint-up
       - media-breakpoint-down
       - media-breakpoint-only
+      - hover
       - hover-focus
+      - hover-focus-active

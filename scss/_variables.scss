@@ -25,6 +25,8 @@ $c-dark:        darken($c-black, 2.4); // #222222
 
 // Adaptations
 $c-grey-white:  lighten($c-grey-light, 40);
+$c-blue-white:  lighten($c-blue-brand, 72%);
+$c-blue-white2:  lighten($c-blue-brand, 67%);
 
 // Transparent colours
 $c-black-t25:       transparentize($c-black, .25);

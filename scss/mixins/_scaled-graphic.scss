@@ -1,0 +1,21 @@
+//
+// Scales a background graphic to a certain column size, based on the default container width
+//
+
+$default-scaled-graphic-sizes: 'md', 'lg', 'xl';
+
+@mixin scaled-graphic($scale-columns, $sizes: $default-scaled-graphic-sizes, $hide-by-default: false) {
+    @if $hide-by-default {
+        background-size: 0 0;
+    } @else {
+        background-size: auto auto;
+    }
+
+    @each $breakpoint, $container-max-width in $container-max-widths {
+        @if index($sizes, $breakpoint) != null {
+            @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+                background-size: #{$container-max-width / 12 * $scale-columns};
+            }
+        }
+    }
+}

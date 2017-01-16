@@ -1,0 +1,65 @@
+//
+// Media module
+//
+
+.mod-story {
+    @include site-wide;
+    @include mod-background-variations($c-blue-white);
+    @include scaled-graphic(5, ('md', 'lg', 'xl'), 1);
+
+    background-image: none;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+
+    /**
+     * Dimension setting
+     */
+
+    &__content {
+        display: block;
+
+        @include media-breakpoint-up(md) {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+
+        min-height: 12rem;
+
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &__inner {
+        @include make-col-ready;
+
+        @include media-breakpoint-up(md) {
+            @include make-col(10);
+        }
+    }
+
+    &__header {
+        @include h2;
+
+        margin: 0 0 1rem 0;
+    }
+
+    &__lead {
+        @include lead;
+    }
+
+    /**
+     * Position modifiers
+     */
+    &--right {
+        background-position: bottom left;
+
+        .mod-story__content {
+            @include media-breakpoint-up(md) {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}

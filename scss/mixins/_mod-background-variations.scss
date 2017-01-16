@@ -1,0 +1,27 @@
+//
+// Contains background variations, for variation on the page
+//
+
+$mod-background-variation-map: (
+    'white': $c-white,
+    'blue': $c-blue-light,
+    'blue-alt': $c-blue-brand,
+    'blue-white': $c-blue-white2,
+    'grey': $c-grey,
+    'dark-grey': $c-grey-dark,
+    'light-grey': $c-grey-light
+);
+
+@mixin mod-background-variations($default-color: $c-blue-white) {
+    background-color: $default-color;
+
+    @each $variation, $colour in $mod-background-variation-map {
+        &--bg-#{$variation} {
+            background-color: $colour;
+
+            @if lightness($colour) < 60% {
+                color: $c-white;
+            }
+        }
+    }
+}

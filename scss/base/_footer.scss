@@ -3,32 +3,42 @@
 //
 
 .site-footer {
-    @include make-container;
-    @include make-container-max-widths;
+    @include site-wide;
 
-    &__source-credits {
-        @include make-row;
+    color: $c-white;
+    background-color: $c-black;
+
+    &__content {
+        display: flex;
+        flex-flow: row wrap;
     }
 
-    &__source-credit {
-        @include make-col(3);
-    }
+    &__left,
+    &__right {
+        width: 100%;
+        min-height: 1;
 
-    &__source {
-        @include make-row;
-    }
-
-    &__source-grav {
-        @include text-right;
-        @include make-col(12);
-
-        color: $c-grey-dark;
-
-        a,
-        a:visited,
-        a:active {
-            color: $c-grey-dark;
-            text-decoration: underline;;
+        @include media-breakpoint-up(md) {
+            flex-basis: calc(50%);
         }
     }
+
+    &__right {
+        text-align: right;
+
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
+
+    a,
+    a:link {
+        color: $c-grey-light;
+        text-decoration: none;
+
+        @include hover-focus-active {
+            color: $c-white;
+        }
+    }
+
 }
