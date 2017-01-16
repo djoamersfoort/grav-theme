@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="30"
+  height="30"
+  viewBox="0 0 680 680"
+  version="1.1">
+    <title>DJO Logo</title>
+
+    <g fill="none" stroke="#ffffff" stroke-width="75" stroke-linecap="round">
+        <path d="M340,215 v280 c0,180 -150,120 -150,120 a300,300 0 1,1 300,0"
+            fill="none" />
+    </g>
+</svg>
