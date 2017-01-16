@@ -1,0 +1,12 @@
+name: DJO Amersfoort
+version: 0.1.0
+description: Basisthema voor De Jonge Onderzoekers Amersfoort
+icon: rebel
+author:
+  name: Roelof Roos
+  email: github@roelof.io
+homepage: https://github.com/djoamersfoort/grav-theme
+keywords: grav, theme, djo-amersfoort, djoamersfoort, branded, custom-made, blue, white, light, responsive, bootstrap
+bugs: https://github.com/djoamersfoort/grav-theme/issues
+readme: https://github.com/djoamersfoort/grav-theme/blob/master/README.md
+license: LGPL-3.0
