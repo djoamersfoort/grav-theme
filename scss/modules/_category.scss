@@ -1,0 +1,48 @@
+//
+// Category block
+//
+
+.mod-category {
+    @include site-wide;
+
+    &__content {
+        display: flex;
+        align-items: stretch;
+        flex-flow: column nowrap;
+
+        @include media-breakpoint-up(sm) {
+            flex-direction: row;
+        };
+    }
+
+    &__band {
+        @include make-col-ready;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        order: 1;
+
+        padding: 1rem;
+        font-size: 3rem;
+
+        color: $c-white;
+        background-color: $c-blue-brand;
+
+        @include media-breakpoint-up(sm) {
+            max-width: 5rem;
+        }
+
+        & .fw {
+            font-size: 3rem;
+            color: $c-white;
+        }
+    }
+
+    &__inner {
+        @include make-col-ready;
+
+        order: 2;
+    }
+}

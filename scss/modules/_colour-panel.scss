@@ -1,0 +1,90 @@
+//
+// Colour panels
+//
+
+.mod-colour-panel {
+    @include site-wide;
+    @include mod-background-variations($c-blue-white);
+
+    &__content {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    &__item {
+        @include make-col-ready;
+
+        padding: .5rem 2rem;
+
+        @include media-breakpoint-up(sm) {
+            @include make-col(6);
+        }
+
+        @include media-breakpoint-up(md) {
+            @include make-col(4);
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include make-col(3);
+        }
+    }
+
+    &__name {
+        font-size: 1.2rem;
+        font-weight: normal;
+
+        color: $c-grey-dark;
+        text-align: center;
+    }
+
+    &__color {
+        width: 3rem;
+        height: 3rem;
+        margin: 1rem auto;
+
+        background-color: $c-white;
+        border-radius: 2px;
+        box-shadow: 1px 1px 3px $c-grey-t50;
+
+        &--brand {
+            background-color: $c-blue-brand;
+        }
+
+        &--background {
+            background-color: $c-white;
+        }
+
+        &--text {
+            background-color: $c-black;
+        }
+
+        &--accent-1 {
+            background-color: $c-blue-alt;
+        }
+
+        &--accent-2 {
+            background-color: $c-blue-alt-2;
+        }
+
+        &--grey-1 {
+            background-color: $c-grey;
+        }
+
+        &--grey-2 {
+            background-color: $c-grey-light;
+        }
+
+        &--grey-3 {
+            background-color: $c-grey-dark;
+        }
+
+        &--contrast {
+            background-color: $c-contrast;
+        }
+    }
+
+    //$c-contrast
+}

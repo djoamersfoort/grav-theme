@@ -391,11 +391,11 @@ blockquote {
 
 /* line 163, node_modules/bootstrap/scss/_reboot.scss */
 a {
-    color: #5d52d6;
+    color: #7771bb;
     text-decoration: none; }
     /* line 21, node_modules/bootstrap/scss/mixins/_hover.scss */
     a:focus, a:hover {
-        color: #362ab1;
+        color: #4f4997;
         text-decoration: underline; }
 
 /* line 179, node_modules/bootstrap/scss/_reboot.scss */
@@ -2693,7 +2693,7 @@ fieldset[disabled] a.btn {
 /* line 100, node_modules/bootstrap/scss/_buttons.scss */
 .btn-link {
     font-weight: normal;
-    color: #5d52d6;
+    color: #7771bb;
     border-radius: 0; }
     /* line 105, node_modules/bootstrap/scss/_buttons.scss */
     .btn-link, .btn-link:active, .btn-link.active, .btn-link:disabled {
@@ -2706,7 +2706,7 @@ fieldset[disabled] a.btn {
         border-color: transparent; }
     /* line 21, node_modules/bootstrap/scss/mixins/_hover.scss */
     .btn-link:focus, .btn-link:hover {
-        color: #362ab1;
+        color: #4f4997;
         text-decoration: underline;
         background-color: transparent; }
     /* line 125, node_modules/bootstrap/scss/_buttons.scss */
@@ -4191,12 +4191,12 @@ tbody.collapse.show {
     padding: 0.5rem 0.75rem;
     margin-left: -1px;
     line-height: 1.25;
-    color: #5d52d6;
+    color: #7771bb;
     background-color: #fff;
     border: 1px solid #ddd; }
     /* line 21, node_modules/bootstrap/scss/mixins/_hover.scss */
     .page-link:focus, .page-link:hover {
-        color: #362ab1;
+        color: #4f4997;
         text-decoration: none;
         background-color: #eceeef;
         border-color: #ddd; }
@@ -8208,7 +8208,12 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     font-weight: bold;
     src: url("../fonts/bpreplaybold-webfont.woff2") format("woff2"), url("../fonts/bpreplaybold-webfont.woff") format("woff"), url("../fonts/bpreplaybold-webfont.svg#bpreplaybold") format("svg"); }
 
-/* line 8, scss/base/_body.scss */
+/* line 5, scss/base/_body.scss */
+body {
+    color: #282828;
+    background-color: white; }
+
+/* line 10, scss/base/_body.scss */
 .skip-to-content {
     position: absolute;
     width: 1px;
@@ -8226,7 +8231,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
         margin: 0;
         overflow: visible;
         clip: auto; }
-    /* line 12, scss/base/_body.scss */
+    /* line 14, scss/base/_body.scss */
     .skip-to-content:focus {
         position: absolute;
         top: 0;
@@ -8235,7 +8240,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
         margin: 0;
         line-height: 2.5rem; }
 
-/* line 22, scss/base/_body.scss */
+/* line 24, scss/base/_body.scss */
 .avocado {
     color: magenta; }
 
@@ -8511,7 +8516,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     /* line 34, scss/base/_footer.scss */
     .site-footer a,
     .site-footer a:link {
-        color: #c8c8c8;
+        color: #b5b5b5;
         text-decoration: none; }
         /* line 54, node_modules/bootstrap/scss/mixins/_hover.scss */
         .site-footer a:focus, .site-footer a:active, .site-footer a:hover,
@@ -8556,7 +8561,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     display: -ms-flexbox;
     display: flex;
     color: white;
-    background-color: #292088;
+    background-color: #3d3875;
     border-color: #8c87ba; }
     /* line 8, scss/mixins/_site-wide.scss */
     .mod-landing__content {
@@ -8721,7 +8726,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
         background-color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-media--bg-blue {
-        background-color: #292088;
+        background-color: #3d3875;
         color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-media--bg-blue-alt {
@@ -8732,15 +8737,15 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
         background-color: #e1dffb; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-media--bg-grey {
-        background-color: #888888;
+        background-color: #757575;
         color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-media--bg-dark-grey {
-        background-color: #5b5b5b;
+        background-color: #484848;
         color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-media--bg-light-grey {
-        background-color: #c8c8c8; }
+        background-color: #b5b5b5; }
     @media (min-width: 768px) {
         /* line 5, scss/modules/_media.scss */
         .mod-media {
@@ -8912,7 +8917,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
         background-color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-story--bg-blue {
-        background-color: #292088;
+        background-color: #3d3875;
         color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-story--bg-blue-alt {
@@ -8923,15 +8928,15 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
         background-color: #e1dffb; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-story--bg-grey {
-        background-color: #888888;
+        background-color: #757575;
         color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-story--bg-dark-grey {
-        background-color: #5b5b5b;
+        background-color: #484848;
         color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-story--bg-light-grey {
-        background-color: #c8c8c8; }
+        background-color: #b5b5b5; }
     @media (min-width: 768px) {
         /* line 5, scss/modules/_story.scss */
         .mod-story {
@@ -9077,7 +9082,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
         background-color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-text--bg-blue {
-        background-color: #292088;
+        background-color: #3d3875;
         color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-text--bg-blue-alt {
@@ -9088,15 +9093,15 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
         background-color: #e1dffb; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-text--bg-grey {
-        background-color: #888888;
+        background-color: #757575;
         color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-text--bg-dark-grey {
-        background-color: #5b5b5b;
+        background-color: #484848;
         color: white; }
     /* line 19, scss/mixins/_mod-background-variations.scss */
     .mod-text--bg-light-grey {
-        background-color: #c8c8c8; }
+        background-color: #b5b5b5; }
     /* line 13, scss/modules/_text.scss */
     .mod-text__content {
         padding-top: 2rem;
@@ -9119,5 +9124,321 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
         max-width: 80%;
         margin-right: auto;
         margin-left: auto; }
+
+/* line 5, scss/modules/_colour-panel.scss */
+.mod-colour-panel {
+    padding: 1.25rem 0;
+    background-color: #f6f5fe; }
+    /* line 8, scss/mixins/_site-wide.scss */
+    .mod-colour-panel__content {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 15px;
+        padding-left: 15px; }
+        @media (min-width: 576px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-colour-panel__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 768px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-colour-panel__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 992px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-colour-panel__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 1200px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-colour-panel__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 576px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-colour-panel__content {
+                width: 540px;
+                max-width: 100%; } }
+        @media (min-width: 768px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-colour-panel__content {
+                width: 720px;
+                max-width: 100%; } }
+        @media (min-width: 992px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-colour-panel__content {
+                width: 960px;
+                max-width: 100%; } }
+        @media (min-width: 1200px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-colour-panel__content {
+                width: 1140px;
+                max-width: 100%; } }
+    /* line 19, scss/mixins/_mod-background-variations.scss */
+    .mod-colour-panel--bg-white {
+        background-color: white; }
+    /* line 19, scss/mixins/_mod-background-variations.scss */
+    .mod-colour-panel--bg-blue {
+        background-color: #3d3875;
+        color: white; }
+    /* line 19, scss/mixins/_mod-background-variations.scss */
+    .mod-colour-panel--bg-blue-alt {
+        background-color: #180f75;
+        color: white; }
+    /* line 19, scss/mixins/_mod-background-variations.scss */
+    .mod-colour-panel--bg-blue-white {
+        background-color: #e1dffb; }
+    /* line 19, scss/mixins/_mod-background-variations.scss */
+    .mod-colour-panel--bg-grey {
+        background-color: #757575;
+        color: white; }
+    /* line 19, scss/mixins/_mod-background-variations.scss */
+    .mod-colour-panel--bg-dark-grey {
+        background-color: #484848;
+        color: white; }
+    /* line 19, scss/mixins/_mod-background-variations.scss */
+    .mod-colour-panel--bg-light-grey {
+        background-color: #b5b5b5; }
+    /* line 9, scss/modules/_colour-panel.scss */
+    .mod-colour-panel__content {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: end;
+            align-items: flex-end;
+        -ms-flex-direction: row;
+            flex-direction: row;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+    /* line 17, scss/modules/_colour-panel.scss */
+    .mod-colour-panel__item {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding: .5rem 2rem; }
+        @media (min-width: 576px) {
+            /* line 17, scss/modules/_colour-panel.scss */
+            .mod-colour-panel__item {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 768px) {
+            /* line 17, scss/modules/_colour-panel.scss */
+            .mod-colour-panel__item {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 992px) {
+            /* line 17, scss/modules/_colour-panel.scss */
+            .mod-colour-panel__item {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 1200px) {
+            /* line 17, scss/modules/_colour-panel.scss */
+            .mod-colour-panel__item {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 576px) {
+            /* line 17, scss/modules/_colour-panel.scss */
+            .mod-colour-panel__item {
+                -ms-flex: 0 0 50%;
+                    flex: 0 0 50%;
+                max-width: 50%; } }
+        @media (min-width: 768px) {
+            /* line 17, scss/modules/_colour-panel.scss */
+            .mod-colour-panel__item {
+                -ms-flex: 0 0 33.3333333333%;
+                    flex: 0 0 33.3333333333%;
+                max-width: 33.3333333333%; } }
+        @media (min-width: 992px) {
+            /* line 17, scss/modules/_colour-panel.scss */
+            .mod-colour-panel__item {
+                -ms-flex: 0 0 25%;
+                    flex: 0 0 25%;
+                max-width: 25%; } }
+    /* line 35, scss/modules/_colour-panel.scss */
+    .mod-colour-panel__name {
+        font-size: 1.2rem;
+        font-weight: normal;
+        color: #484848;
+        text-align: center; }
+    /* line 43, scss/modules/_colour-panel.scss */
+    .mod-colour-panel__color {
+        width: 3rem;
+        height: 3rem;
+        margin: 1rem auto;
+        background-color: white;
+        border-radius: 2px;
+        box-shadow: 1px 1px 3px rgba(117, 117, 117, 0.5); }
+        /* line 52, scss/modules/_colour-panel.scss */
+        .mod-colour-panel__color--brand {
+            background-color: #180f75; }
+        /* line 56, scss/modules/_colour-panel.scss */
+        .mod-colour-panel__color--background {
+            background-color: white; }
+        /* line 60, scss/modules/_colour-panel.scss */
+        .mod-colour-panel__color--text {
+            background-color: #282828; }
+        /* line 64, scss/modules/_colour-panel.scss */
+        .mod-colour-panel__color--accent-1 {
+            background-color: #0a3f82; }
+        /* line 68, scss/modules/_colour-panel.scss */
+        .mod-colour-panel__color--accent-2 {
+            background-color: #5d53c1; }
+        /* line 72, scss/modules/_colour-panel.scss */
+        .mod-colour-panel__color--grey-1 {
+            background-color: #757575; }
+        /* line 76, scss/modules/_colour-panel.scss */
+        .mod-colour-panel__color--grey-2 {
+            background-color: #b5b5b5; }
+        /* line 80, scss/modules/_colour-panel.scss */
+        .mod-colour-panel__color--grey-3 {
+            background-color: #484848; }
+        /* line 84, scss/modules/_colour-panel.scss */
+        .mod-colour-panel__color--contrast {
+            background-color: #c1a500; }
+
+/* line 5, scss/modules/_category.scss */
+.mod-category {
+    padding: 1.25rem 0; }
+    /* line 8, scss/mixins/_site-wide.scss */
+    .mod-category__content {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 15px;
+        padding-left: 15px; }
+        @media (min-width: 576px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-category__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 768px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-category__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 992px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-category__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 1200px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-category__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 576px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-category__content {
+                width: 540px;
+                max-width: 100%; } }
+        @media (min-width: 768px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-category__content {
+                width: 720px;
+                max-width: 100%; } }
+        @media (min-width: 992px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-category__content {
+                width: 960px;
+                max-width: 100%; } }
+        @media (min-width: 1200px) {
+            /* line 8, scss/mixins/_site-wide.scss */
+            .mod-category__content {
+                width: 1140px;
+                max-width: 100%; } }
+    /* line 8, scss/modules/_category.scss */
+    .mod-category__content {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap; }
+        @media (min-width: 576px) {
+            /* line 8, scss/modules/_category.scss */
+            .mod-category__content {
+                -ms-flex-direction: row;
+                    flex-direction: row; } }
+    /* line 18, scss/modules/_category.scss */
+    .mod-category__band {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: end;
+            align-items: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+        -ms-flex-order: 1;
+            order: 1;
+        padding: 1rem;
+        font-size: 3rem;
+        color: white;
+        background-color: #180f75; }
+        @media (min-width: 576px) {
+            /* line 18, scss/modules/_category.scss */
+            .mod-category__band {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 768px) {
+            /* line 18, scss/modules/_category.scss */
+            .mod-category__band {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 992px) {
+            /* line 18, scss/modules/_category.scss */
+            .mod-category__band {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 1200px) {
+            /* line 18, scss/modules/_category.scss */
+            .mod-category__band {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 576px) {
+            /* line 18, scss/modules/_category.scss */
+            .mod-category__band {
+                max-width: 5rem; } }
+        /* line 37, scss/modules/_category.scss */
+        .mod-category__band .fw {
+            font-size: 3rem;
+            color: white; }
+    /* line 43, scss/modules/_category.scss */
+    .mod-category__inner {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        -ms-flex-order: 2;
+            order: 2; }
+        @media (min-width: 576px) {
+            /* line 43, scss/modules/_category.scss */
+            .mod-category__inner {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 768px) {
+            /* line 43, scss/modules/_category.scss */
+            .mod-category__inner {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 992px) {
+            /* line 43, scss/modules/_category.scss */
+            .mod-category__inner {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 1200px) {
+            /* line 43, scss/modules/_category.scss */
+            .mod-category__inner {
+                padding-right: 15px;
+                padding-left: 15px; } }
 
 /*# sourceMappingURL=../cache/maps/theme.css.map */

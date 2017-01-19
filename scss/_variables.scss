@@ -12,13 +12,18 @@ $navbar-brand-padding-y: rem(4px);
 // Colours
 // Prime colours
 $c-blue-brand:  rgb(24, 15, 117); // #180f75
+$c-blue-alt:    rgb(10, 63, 130); // #0a3f82
+$c-blue-alt-2:  rgb(93, 83, 193); // #5d53c1
+
+$c-contrast:    rgb(193, 165, 0); // #c1a500
+
 $c-white:       rgb(255, 255, 255); // #ffffff
 $c-black:       rgb(40, 40, 40); // #282828
+$c-grey:        rgb(117, 117, 117); // #757575
 $c-red:         rgb(255, 0, 0); // #ff0000
-$c-grey:        rgb(136, 136, 136); // #888888
 
 // Variations
-$c-blue-light:  lighten(desaturate($c-blue-brand, 15.4), 7.1); // #202088
+$c-blue-light:  mix($c-blue-brand, $c-grey, 60%); // #202088
 $c-grey-light:  lighten($c-grey, 25); // #c8c8c8
 $c-grey-dark:   darken($c-grey, 17.6); //#5b5b5b
 $c-dark:        darken($c-black, 2.4); // #222222
