@@ -1,0 +1,47 @@
+//
+// Adds a blue ridge above the element
+//
+
+@mixin add-custom-ridge(
+    $color: $c-blue-brand,
+    $width: $blue-ridge-width,
+    $height: $blue-ridge-height,
+    $margin: $blue-ridge-margin,
+    $position: 'after'
+) {
+    &::#{$position} {
+        display: block;
+        height: $height;
+        margin: $margin 0 0 0;
+
+        border: 0 solid $color;
+        border-left-width: $width;
+        content: '';
+    }
+}
+
+@mixin add-blue-ridge {
+    @include add-custom-ridge;
+}
+
+@mixin add-blue-ridge-inverse {
+    @include add-custom-ridge($c-white);
+}
+
+@mixin add-blue-ridge-large {
+    @include add-custom-ridge(
+        $c-blue-brand,
+        $blue-ridge-width * 2,
+        $blue-ridge-height,
+        $blue-ridge-margin * 2
+    );
+}
+
+@mixin add-blue-ridge-large-inverse {
+    @include add-custom-ridge(
+        $c-white,
+        $blue-ridge-width * 2,
+        $blue-ridge-height,
+        $blue-ridge-margin * 2
+    );
+}

@@ -9,11 +9,13 @@
 @mixin h1 {
     @include heading;
     font-size: $font-size-h1;
+    font-weight: 200;
 }
 
 @mixin h2 {
     @include heading;
     font-size: $font-size-h2;
+    font-weight: 200;
 }
 
 @mixin h3 {

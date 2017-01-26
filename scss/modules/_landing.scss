@@ -12,7 +12,7 @@
     border-color: mix($c-white, $c-blue-brand, 50%);
 
     &--branded {
-        background-image: url('../images/landing-brand.svg');
+        background-image: $img-branded-backdrop;
         background-position: bottom right;
         background-repeat: no-repeat;
         background-size: contain;

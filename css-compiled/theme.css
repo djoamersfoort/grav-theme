@@ -523,8 +523,8 @@ output {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: 0.5rem;
-    font-family: inherit;
-    font-weight: 500;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
     line-height: 1.1;
     color: inherit; }
 
@@ -2779,7 +2779,7 @@ tbody.collapse.show {
     position: relative; }
 
 /* line 9, node_modules/bootstrap/scss/_dropdown.scss */
-.dropdown-toggle::after {
+.dropdown-toggle::after, .site-nav__link--dropdown::after {
     display: inline-block;
     width: 0;
     height: 0;
@@ -2795,7 +2795,7 @@ tbody.collapse.show {
     outline: 0; }
 
 /* line 29, node_modules/bootstrap/scss/_dropdown.scss */
-.dropup .dropdown-toggle::after {
+.dropup .dropdown-toggle::after, .dropup .site-nav__link--dropdown::after {
     border-top: 0;
     border-bottom: 0.3em solid; }
 
@@ -8209,11 +8209,25 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     src: url("../fonts/bpreplaybold-webfont.woff2") format("woff2"), url("../fonts/bpreplaybold-webfont.woff") format("woff"), url("../fonts/bpreplaybold-webfont.svg#bpreplaybold") format("svg"); }
 
 /* line 5, scss/base/_body.scss */
+html,
 body {
-    color: #282828;
-    background-color: white; }
+    height: 100vh; }
 
 /* line 10, scss/base/_body.scss */
+body {
+    height: 100%;
+    color: #282828;
+    background-color: #282828; }
+    @media (min-width: 768px) {
+        /* line 10, scss/base/_body.scss */
+        body {
+            background-attachment: fixed;
+            background-image: url("../images/landing-brand.svg");
+            background-position: bottom right;
+            background-repeat: no-repeat;
+            background-size: 60vmin; } }
+
+/* line 24, scss/base/_body.scss */
 .skip-to-content {
     position: absolute;
     width: 1px;
@@ -8231,7 +8245,7 @@ body {
         margin: 0;
         overflow: visible;
         clip: auto; }
-    /* line 14, scss/base/_body.scss */
+    /* line 28, scss/base/_body.scss */
     .skip-to-content:focus {
         position: absolute;
         top: 0;
@@ -8239,10 +8253,6 @@ body {
         padding: 0 0.625rem;
         margin: 0;
         line-height: 2.5rem; }
-
-/* line 24, scss/base/_body.scss */
-.avocado {
-    color: magenta; }
 
 /* line 5, scss/base/_header.scss */
 .site-header {
@@ -8329,12 +8339,20 @@ body {
     padding-left: 0;
     margin-bottom: 0;
     list-style: none; }
-    /* line 50, scss/base/_header.scss */
+    /* line 46, scss/base/_header.scss */
+    .site-nav__item {
+        display: -ms-inline-flexbox;
+        display: inline-flex; }
+    /* line 52, scss/base/_header.scss */
+    .site-nav__dropdown-toggle {
+        display: none; }
+    /* line 56, scss/base/_header.scss */
     .site-nav__link {
         display: block;
         padding: 0.5em 1em;
+        margin-bottom: 0;
         color: white;
-        background-color: none;
+        background-color: transparent;
         border: 0 solid transparent;
         border-bottom-width: 4px;
         transition: border-bottom-color .25s; }
@@ -8343,13 +8361,17 @@ body {
             color: white;
             text-decoration: none;
             border-color: rgba(255, 255, 255, 0.25); }
-        /* line 67, scss/base/_header.scss */
-        .site-nav__link:active, .site-nav__link--active, .site-nav__link--active:focus, .site-nav__link--active:hover {
+        /* line 78, scss/base/_header.scss */
+        .site-nav__link:active, .site-nav__link--active, .site-nav__link--active:focus, .site-nav__link--active:hover,
+        .site-nav__dropdown-toggle:checked ~ .site-nav__link {
             color: white;
             cursor: default;
             border-color: rgba(255, 255, 255, 0.75); }
+    /* line 89, scss/base/_header.scss */
+    .site-nav__dropdown-toggle:checked ~ .site-nav__dropdown {
+        display: block; }
 
-/* line 78, scss/base/_header.scss */
+/* line 94, scss/base/_header.scss */
 .site-nav__dropdown {
     top: calc(100% + 1rem);
     margin-top: 0;
@@ -8357,18 +8379,18 @@ body {
     background-color: #180f75;
     border-width: 0;
     border-radius: 0; }
-    /* line 87, scss/base/_header.scss */
+    /* line 103, scss/base/_header.scss */
     .site-nav__dropdown .dropdown-item {
         color: white; }
         /* line 21, node_modules/bootstrap/scss/mixins/_hover.scss */
         .site-nav__dropdown .dropdown-item:focus, .site-nav__dropdown .dropdown-item:hover {
             color: white;
             background-color: rgba(40, 40, 40, 0.5); }
-    /* line 96, scss/base/_header.scss */
+    /* line 112, scss/base/_header.scss */
     .site-nav__dropdown .dropdown-divider {
         background-color: rgba(255, 255, 255, 0.5); }
 
-/* line 109, scss/base/_header.scss */
+/* line 125, scss/base/_header.scss */
 .site-header__brand {
     display: -ms-flexbox;
     display: flex;
@@ -8388,10 +8410,14 @@ body {
         margin-right: 1.5rem; }
 
 /* line 5, scss/base/_content.scss */
+.site-main {
+    background-color: white; }
+
+/* line 9, scss/base/_content.scss */
 .site-content {
     padding: 0.625rem 0;
     background-color: white; }
-    /* line 9, scss/base/_content.scss */
+    /* line 13, scss/base/_content.scss */
     .site-content__body {
         position: relative;
         margin-left: auto;
@@ -8399,42 +8425,42 @@ body {
         padding-right: 15px;
         padding-left: 15px; }
         @media (min-width: 576px) {
-            /* line 9, scss/base/_content.scss */
+            /* line 13, scss/base/_content.scss */
             .site-content__body {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 768px) {
-            /* line 9, scss/base/_content.scss */
+            /* line 13, scss/base/_content.scss */
             .site-content__body {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 992px) {
-            /* line 9, scss/base/_content.scss */
+            /* line 13, scss/base/_content.scss */
             .site-content__body {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 1200px) {
-            /* line 9, scss/base/_content.scss */
+            /* line 13, scss/base/_content.scss */
             .site-content__body {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 576px) {
-            /* line 9, scss/base/_content.scss */
+            /* line 13, scss/base/_content.scss */
             .site-content__body {
                 width: 540px;
                 max-width: 100%; } }
         @media (min-width: 768px) {
-            /* line 9, scss/base/_content.scss */
+            /* line 13, scss/base/_content.scss */
             .site-content__body {
                 width: 720px;
                 max-width: 100%; } }
         @media (min-width: 992px) {
-            /* line 9, scss/base/_content.scss */
+            /* line 13, scss/base/_content.scss */
             .site-content__body {
                 width: 960px;
                 max-width: 100%; } }
         @media (min-width: 1200px) {
-            /* line 9, scss/base/_content.scss */
+            /* line 13, scss/base/_content.scss */
             .site-content__body {
                 width: 1140px;
                 max-width: 100%; } }
@@ -8443,8 +8469,8 @@ body {
 .site-footer {
     padding: 1.25rem 0;
     color: white;
-    background-color: #282828; }
-    /* line 8, scss/mixins/_site-wide.scss */
+    background-color: transparent; }
+    /* line 8, scss/mixins/_make-site-wide.scss */
     .site-footer__content {
         position: relative;
         margin-left: auto;
@@ -8452,42 +8478,42 @@ body {
         padding-right: 15px;
         padding-left: 15px; }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .site-footer__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .site-footer__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .site-footer__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .site-footer__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .site-footer__content {
                 width: 540px;
                 max-width: 100%; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .site-footer__content {
                 width: 720px;
                 max-width: 100%; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .site-footer__content {
                 width: 960px;
                 max-width: 100%; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .site-footer__content {
                 width: 1140px;
                 max-width: 100%; } }
@@ -8555,6 +8581,177 @@ body {
         overflow: visible;
         clip: auto; }
 
+/* line 5, scss/pages/_content.scss */
+.page-content {
+    padding: 1.25rem 0;
+    background-color: #f6f5fe; }
+    /* line 8, scss/mixins/_make-site-wide.scss */
+    .page-content__content {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 15px;
+        padding-left: 15px; }
+        @media (min-width: 576px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .page-content__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 768px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .page-content__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 992px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .page-content__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 1200px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .page-content__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 576px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .page-content__content {
+                width: 540px;
+                max-width: 100%; } }
+        @media (min-width: 768px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .page-content__content {
+                width: 720px;
+                max-width: 100%; } }
+        @media (min-width: 992px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .page-content__content {
+                width: 960px;
+                max-width: 100%; } }
+        @media (min-width: 1200px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .page-content__content {
+                width: 1140px;
+                max-width: 100%; } }
+    /* line 9, scss/pages/_content.scss */
+    .page-content__header {
+        margin: 2rem 0; }
+    /* line 13, scss/pages/_content.scss */
+    .page-content__title {
+        margin-bottom: 0.5rem;
+        font-family: "Nunito", sans-serif;
+        font-weight: 400;
+        line-height: 1.1;
+        color: inherit;
+        font-size: 3rem;
+        font-weight: 200;
+        color: #282828; }
+        /* line 12, scss/mixins/_add-blue-ridge.scss */
+        .page-content__title::after {
+            display: block;
+            height: 0.5rem;
+            margin: 0.5rem 0 0 0;
+            border: 0 solid #180f75;
+            border-left-width: 4rem;
+            content: ''; }
+    /* line 22, scss/pages/_content.scss */
+    .page-content__subtitle {
+        margin-bottom: 0.5rem;
+        font-family: "Nunito", sans-serif;
+        font-weight: 400;
+        line-height: 1.1;
+        color: inherit;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: rgba(40, 40, 40, 0.75); }
+    /* line 30, scss/pages/_content.scss */
+    .page-content__title + .page-content__subtitle {
+        margin-top: -.5rem; }
+    /* line 34, scss/pages/_content.scss */
+    .page-content__inner {
+        padding: 1rem;
+        background: white; }
+
+/* line 5, scss/modules/_homepage-landing.scss */
+.homepage-landing {
+    padding: 1.25rem 0;
+    background-color: #3d3875;
+    background-image: url("../images/landing-brand.svg");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: contain; }
+    /* line 8, scss/mixins/_make-site-wide.scss */
+    .homepage-landing__content {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 15px;
+        padding-left: 15px; }
+        @media (min-width: 576px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .homepage-landing__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 768px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .homepage-landing__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 992px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .homepage-landing__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 1200px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .homepage-landing__content {
+                padding-right: 15px;
+                padding-left: 15px; } }
+        @media (min-width: 576px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .homepage-landing__content {
+                width: 540px;
+                max-width: 100%; } }
+        @media (min-width: 768px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .homepage-landing__content {
+                width: 720px;
+                max-width: 100%; } }
+        @media (min-width: 992px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .homepage-landing__content {
+                width: 960px;
+                max-width: 100%; } }
+        @media (min-width: 1200px) {
+            /* line 8, scss/mixins/_make-site-wide.scss */
+            .homepage-landing__content {
+                width: 1140px;
+                max-width: 100%; } }
+    /* line 14, scss/modules/_homepage-landing.scss */
+    .homepage-landing__content {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: column;
+            flex-flow: column;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+        min-height: 22rem;
+        padding-bottom: 2rem; }
+    /* line 23, scss/modules/_homepage-landing.scss */
+    .homepage-landing__lead {
+        font-family: 'Nunito', sans-serif;
+        font-size: 3.2rem;
+        font-weight: 200;
+        color: white; }
+    /* line 31, scss/modules/_homepage-landing.scss */
+    .homepage-landing__sub {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.25); }
+    /* line 39, scss/modules/_homepage-landing.scss */
+    .homepage-landing__lead + .homepage-landing__sub {
+        margin-top: -.6rem; }
+
 /* line 5, scss/modules/_landing.scss */
 .mod-landing {
     padding: 1.25rem 0;
@@ -8563,7 +8760,7 @@ body {
     color: white;
     background-color: #3d3875;
     border-color: #8c87ba; }
-    /* line 8, scss/mixins/_site-wide.scss */
+    /* line 8, scss/mixins/_make-site-wide.scss */
     .mod-landing__content {
         position: relative;
         margin-left: auto;
@@ -8571,42 +8768,42 @@ body {
         padding-right: 15px;
         padding-left: 15px; }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-landing__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-landing__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-landing__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-landing__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-landing__content {
                 width: 540px;
                 max-width: 100%; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-landing__content {
                 width: 720px;
                 max-width: 100%; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-landing__content {
                 width: 960px;
                 max-width: 100%; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-landing__content {
                 width: 1140px;
                 max-width: 100%; } }
@@ -8674,7 +8871,7 @@ body {
     /**
      * Position modifiers
      */ }
-    /* line 8, scss/mixins/_site-wide.scss */
+    /* line 8, scss/mixins/_make-site-wide.scss */
     .mod-media__content {
         position: relative;
         margin-left: auto;
@@ -8682,42 +8879,42 @@ body {
         padding-right: 15px;
         padding-left: 15px; }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-media__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-media__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-media__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-media__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-media__content {
                 width: 540px;
                 max-width: 100%; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-media__content {
                 width: 720px;
                 max-width: 100%; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-media__content {
                 width: 960px;
                 max-width: 100%; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-media__content {
                 width: 1140px;
                 max-width: 100%; } }
@@ -8832,11 +9029,12 @@ body {
     /* line 63, scss/modules/_media.scss */
     .mod-media__header {
         margin-bottom: 0.5rem;
-        font-family: inherit;
-        font-weight: 500;
+        font-family: "Nunito", sans-serif;
+        font-weight: 400;
         line-height: 1.1;
         color: inherit;
         font-size: 2rem;
+        font-weight: 200;
         margin: 0 0 1rem 0; }
     /* line 69, scss/modules/_media.scss */
     .mod-media__lead {
@@ -8865,7 +9063,7 @@ body {
     /**
      * Position modifiers
      */ }
-    /* line 8, scss/mixins/_site-wide.scss */
+    /* line 8, scss/mixins/_make-site-wide.scss */
     .mod-story__content {
         position: relative;
         margin-left: auto;
@@ -8873,42 +9071,42 @@ body {
         padding-right: 15px;
         padding-left: 15px; }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-story__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-story__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-story__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-story__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-story__content {
                 width: 540px;
                 max-width: 100%; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-story__content {
                 width: 720px;
                 max-width: 100%; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-story__content {
                 width: 960px;
                 max-width: 100%; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-story__content {
                 width: 1140px;
                 max-width: 100%; } }
@@ -9004,21 +9202,30 @@ body {
     /* line 43, scss/modules/_story.scss */
     .mod-story__header {
         margin-bottom: 0.5rem;
-        font-family: inherit;
-        font-weight: 500;
+        font-family: "Nunito", sans-serif;
+        font-weight: 400;
         line-height: 1.1;
         color: inherit;
         font-size: 2rem;
+        font-weight: 200;
         margin: 0 0 1rem 0; }
-    /* line 49, scss/modules/_story.scss */
+        /* line 12, scss/mixins/_add-blue-ridge.scss */
+        .mod-story__header::after {
+            display: block;
+            height: 0.5rem;
+            margin: 0.25rem 0 0 0;
+            border: 0 solid #180f75;
+            border-left-width: 2rem;
+            content: ''; }
+    /* line 50, scss/modules/_story.scss */
     .mod-story__lead {
         font-size: 1.25rem;
         font-weight: 300; }
-    /* line 56, scss/modules/_story.scss */
+    /* line 57, scss/modules/_story.scss */
     .mod-story--right {
         background-position: bottom left; }
         @media (min-width: 768px) {
-            /* line 59, scss/modules/_story.scss */
+            /* line 60, scss/modules/_story.scss */
             .mod-story--right .mod-story__content {
                 -ms-flex-direction: row-reverse;
                     flex-direction: row-reverse; } }
@@ -9030,7 +9237,7 @@ body {
     /**
      * Dimension setting
      */ }
-    /* line 8, scss/mixins/_site-wide.scss */
+    /* line 8, scss/mixins/_make-site-wide.scss */
     .mod-text__content {
         position: relative;
         margin-left: auto;
@@ -9038,42 +9245,42 @@ body {
         padding-right: 15px;
         padding-left: 15px; }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-text__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-text__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-text__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-text__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-text__content {
                 width: 540px;
                 max-width: 100%; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-text__content {
                 width: 720px;
                 max-width: 100%; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-text__content {
                 width: 960px;
                 max-width: 100%; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-text__content {
                 width: 1140px;
                 max-width: 100%; } }
@@ -9110,11 +9317,12 @@ body {
     /* line 20, scss/modules/_text.scss */
     .mod-text__header {
         margin-bottom: 0.5rem;
-        font-family: inherit;
-        font-weight: 500;
+        font-family: "Nunito", sans-serif;
+        font-weight: 400;
         line-height: 1.1;
         color: inherit;
         font-size: 2rem;
+        font-weight: 200;
         max-width: 80%;
         margin: 0 auto 1rem auto; }
     /* line 27, scss/modules/_text.scss */
@@ -9129,7 +9337,7 @@ body {
 .mod-colour-panel {
     padding: 1.25rem 0;
     background-color: #f6f5fe; }
-    /* line 8, scss/mixins/_site-wide.scss */
+    /* line 8, scss/mixins/_make-site-wide.scss */
     .mod-colour-panel__content {
         position: relative;
         margin-left: auto;
@@ -9137,42 +9345,42 @@ body {
         padding-right: 15px;
         padding-left: 15px; }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-colour-panel__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-colour-panel__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-colour-panel__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-colour-panel__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-colour-panel__content {
                 width: 540px;
                 max-width: 100%; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-colour-panel__content {
                 width: 720px;
                 max-width: 100%; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-colour-panel__content {
                 width: 960px;
                 max-width: 100%; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-colour-panel__content {
                 width: 1140px;
                 max-width: 100%; } }
@@ -9304,7 +9512,7 @@ body {
 /* line 5, scss/modules/_category.scss */
 .mod-category {
     padding: 1.25rem 0; }
-    /* line 8, scss/mixins/_site-wide.scss */
+    /* line 8, scss/mixins/_make-site-wide.scss */
     .mod-category__content {
         position: relative;
         margin-left: auto;
@@ -9312,42 +9520,42 @@ body {
         padding-right: 15px;
         padding-left: 15px; }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-category__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-category__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-category__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-category__content {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 576px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-category__content {
                 width: 540px;
                 max-width: 100%; } }
         @media (min-width: 768px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-category__content {
                 width: 720px;
                 max-width: 100%; } }
         @media (min-width: 992px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-category__content {
                 width: 960px;
                 max-width: 100%; } }
         @media (min-width: 1200px) {
-            /* line 8, scss/mixins/_site-wide.scss */
+            /* line 8, scss/mixins/_make-site-wide.scss */
             .mod-category__content {
                 width: 1140px;
                 max-width: 100%; } }
@@ -9371,6 +9579,7 @@ body {
         min-height: 1px;
         padding-right: 15px;
         padding-left: 15px;
+        position: relative;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-align: end;
@@ -9406,12 +9615,13 @@ body {
         @media (min-width: 576px) {
             /* line 18, scss/modules/_category.scss */
             .mod-category__band {
-                max-width: 5rem; } }
-        /* line 37, scss/modules/_category.scss */
+                max-width: 5rem;
+                background-image: linear-gradient(225deg, rgba(173, 56, 239, 0) 0%, rgba(173, 56, 239, 0.3) 100%); } }
+        /* line 40, scss/modules/_category.scss */
         .mod-category__band .fw {
             font-size: 3rem;
             color: white; }
-    /* line 43, scss/modules/_category.scss */
+    /* line 46, scss/modules/_category.scss */
     .mod-category__inner {
         position: relative;
         width: 100%;
@@ -9421,24 +9631,49 @@ body {
         -ms-flex-order: 2;
             order: 2; }
         @media (min-width: 576px) {
-            /* line 43, scss/modules/_category.scss */
+            /* line 46, scss/modules/_category.scss */
             .mod-category__inner {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 768px) {
-            /* line 43, scss/modules/_category.scss */
+            /* line 46, scss/modules/_category.scss */
             .mod-category__inner {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 992px) {
-            /* line 43, scss/modules/_category.scss */
+            /* line 46, scss/modules/_category.scss */
             .mod-category__inner {
                 padding-right: 15px;
                 padding-left: 15px; } }
         @media (min-width: 1200px) {
-            /* line 43, scss/modules/_category.scss */
+            /* line 46, scss/modules/_category.scss */
             .mod-category__inner {
                 padding-right: 15px;
                 padding-left: 15px; } }
+    /* line 52, scss/modules/_category.scss */
+    .mod-category__header {
+        margin-bottom: 0.5rem;
+        font-family: "Nunito", sans-serif;
+        font-weight: 400;
+        line-height: 1.1;
+        color: inherit;
+        font-size: 2rem;
+        font-weight: 200; }
+        /* line 12, scss/mixins/_add-blue-ridge.scss */
+        .mod-category__header::after {
+            display: block;
+            height: 0.5rem;
+            margin: 0.25rem 0 0 0;
+            border: 0 solid #180f75;
+            border-left-width: 2rem;
+            content: ''; }
+    /* line 57, scss/modules/_category.scss */
+    .mod-category__lead {
+        font-size: 1.25rem;
+        font-weight: 300; }
+
+/* line 5, scss/tweaks/_hidden.scss */
+.hidden {
+    display: none; }
 
 /*# sourceMappingURL=../cache/maps/theme.css.map */

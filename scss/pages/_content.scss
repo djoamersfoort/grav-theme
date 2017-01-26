@@ -1,0 +1,38 @@
+//
+// Regular content page
+//
+
+.page-content {
+    @include make-site-wide;
+    background-color: $c-blue-white;
+
+    &__header {
+        margin: 2rem 0;
+    }
+
+    &__title {
+        @include add-blue-ridge-large;
+        @include heading;
+
+        font-size: 3rem;
+        font-weight: 200;
+        color: $c-black;
+    }
+
+    &__subtitle {
+        @include heading;
+
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: $c-black-t25;
+    }
+
+    &__title + &__subtitle {
+        margin-top: -.5rem;
+    }
+
+    &__inner {
+        padding: 1rem;
+        background: $c-white;
+    }
+}

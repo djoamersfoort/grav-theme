@@ -2,6 +2,10 @@
 // Main content
 //
 
+.site-main {
+    background-color: $c-white;
+}
+
 .site-content {
     padding: $grid-gutter * .5 0;
     background-color: $c-white;

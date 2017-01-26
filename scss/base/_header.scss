@@ -45,14 +45,21 @@
 
     &__item {
         @extend .nav-item;
+
+        display: inline-flex;
+    }
+
+    &__dropdown-toggle {
+        display: none;
     }
 
     &__link {
         display: block;
         padding: $nav-link-padding;
+        margin-bottom: 0;
 
         color: $c-white;
-        background-color: none;
+        background-color: transparent;
         border: 0 solid transparent;
         border-bottom-width: $navbar-item-bottom-border;
 
@@ -64,14 +71,23 @@
             border-color: $c-white-t75;
         }
 
+        &--dropdown::after {
+            @extend .dropdown-toggle::after;
+        }
+
         &:active,
         &--active,
         &--active:focus,
-        &--active:hover {
+        &--active:hover,
+        .site-nav__dropdown-toggle:checked ~ & {
             color: $c-white;
             cursor: default;
             border-color: $c-white-t25;
         }
+    }
+
+    &__dropdown-toggle:checked ~ &__dropdown {
+        display: block;
     }
 }
 

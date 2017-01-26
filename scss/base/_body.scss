@@ -2,9 +2,23 @@
 // Main styling for body and font
 //
 
+html,
 body {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
     color: $c-black;
-    background-color: $c-white;
+    background-color: $c-black;
+
+    @include media-breakpoint-up(md) {
+        background-attachment: fixed;
+        background-image: $img-branded-backdrop;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: 60vmin;
+    }
 }
 
 .skip-to-content {
@@ -19,8 +33,4 @@ body {
         margin: 0;
         line-height: $navbar-padding-y * 2 + $line-height-base;
     }
-}
-
-.avocado {
-    color: $c-blue;
 }

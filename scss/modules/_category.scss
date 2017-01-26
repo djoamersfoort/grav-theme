@@ -18,6 +18,8 @@
     &__band {
         @include make-col-ready;
 
+        position: relative;
+
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
@@ -32,6 +34,7 @@
 
         @include media-breakpoint-up(sm) {
             max-width: 5rem;
+            background-image: linear-gradient(225deg, $c-theme-gradient-pink-simple);
         }
 
         & .fw {
@@ -44,5 +47,14 @@
         @include make-col-ready;
 
         order: 2;
+    }
+
+    &__header {
+        @include h2;
+        @include add-blue-ridge;
+    }
+
+    &__lead {
+        @include lead;
     }
 }

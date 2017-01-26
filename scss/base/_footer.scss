@@ -6,7 +6,7 @@
     @include site-wide;
 
     color: $c-white;
-    background-color: $c-black;
+    background-color: transparent;
 
     &__content {
         display: flex;

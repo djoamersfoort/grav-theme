@@ -1,0 +1,42 @@
+//
+// HOmepage landing
+//
+
+.homepage-landing {
+    @include make-site-wide;
+
+    background-color: $c-blue-light;
+    background-image: $img-branded-backdrop;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &__content {
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+
+        min-height: 22rem;
+        padding-bottom: 2rem;
+    }
+
+    &__lead {
+        font-family: 'Nunito', sans-serif;
+        font-size: 3.2rem;
+        font-weight: 200;
+
+        color: $c-white;
+    }
+
+    &__sub {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+
+        color: $c-white-t75;
+    }
+
+    &__lead + &__sub {
+        margin-top: -.6rem;
+    }
+}
