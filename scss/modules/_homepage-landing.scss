@@ -11,6 +11,13 @@
     background-repeat: no-repeat;
     background-size: contain;
 
+    &--with-background {
+        background-color: $c-black;
+        background-image: none;
+        background-position: center;
+        background-size: cover;
+    }
+
     &__content {
         display: flex;
         flex-flow: column;
@@ -21,6 +28,8 @@
     }
 
     &__lead {
+        max-width: 900px;
+
         font-family: 'Nunito', sans-serif;
         font-size: 3.2rem;
         font-weight: 200;
@@ -29,11 +38,13 @@
     }
 
     &__sub {
+        max-width: 900px;
+
         font-family: 'Nunito', sans-serif;
         font-size: 1.4rem;
         font-weight: 400;
 
-        color: $c-white-t75;
+        color: $c-white-t25;
     }
 
     &__lead + &__sub {

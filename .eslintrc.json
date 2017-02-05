@@ -24,6 +24,7 @@
         "no-unused-vars": 2,
         "no-sequences": 2,
         "no-new": 2,
+        "no-var": 0,
         "strict": [2, "function"],
         "indent": [2, 4, {"SwitchCase": 1}],
         "no-use-before-define": [2, {"functions": false}],

@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     grunt.file.mkdir('./js-compiled');
     grunt.file.mkdir('./cache');
 
-    const banner = [
+    var banner = [
         'DJO Amersfoort - Grav Theme',
         'Developed with ❤ by Roelof in Amersfoort',
         '(and sometimes Zwolle...)',
@@ -34,12 +34,12 @@ module.exports = function(grunt) {
     banner.unshift('/* eslint-disable */');
     banner.push(' */');
 
-    const bannerText = banner.join('\n') + '\n';
+    var bannerText = banner.join('\n') + '\n';
 
     //
     // File configuration, contains all files that will be compiled.
     //
-    const files = {
+    var files = {
         vendor: {
             'js-compiled/vendor.min.js': [
                 'node_modules/jquery/dist/jquery.js',
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
         }
     };
 
-    const plugins = [
+    var plugins = [
         require('postcss-flexbugs-fixes'),
         require('autoprefixer')({
             browsers: ['last 2 versions']
