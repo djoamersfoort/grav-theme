@@ -1,0 +1,37 @@
+{% macro navmenu(page, dropdown_name) %}
+      <div class="dropdown-menu" aria-labelledby="{{ dropdown_name }}">
+      {% for p in page.children.visible %}
+        {% set page_active = p.active ? 'selected' : '' %}
+        <a class="dropdown-item {{ page_active }}" href="{{ p.url }}">{{ p.menu }}</a>
+      {% endfor %}
+      </div>
+{% endmacro %}
+
+{% macro loop(page, className) %}
+  {% for p in page.children.visible %}
+  {% set current_page = (p.active or p.activeChild) %}
+  {% if p.children.visible.count > 0 %}
+    {% set dropdown_name = 'site-navbar-' ~ p.url|escape('css') %}
+    <li class="nav-item dropdown {{ className }} {{ current_page ? 'active' : '' }}">
+      <a
+        class="nav-link dropdown-toggle"
+        href="{{ p.url }}"
+        id="{{ dropdown_name }}"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">{{ p.menu }}</a>
+        {{ _self.navmenu(p, dropdown_name) }}
+    </li>
+  {% else %}
+  <li class="nav-item {{ className }} {{ current_page ? 'active' : '' }}">
+    <a
+      class="nav-link"
+      href="{{ p.url }}">{{ p.menu }}</a>
+  </li>
+  {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+<ul class="nav navbar-nav">
+  {{ _self.loop(pages) }}
+</ul>

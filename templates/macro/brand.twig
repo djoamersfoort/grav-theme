@@ -1,0 +1,6 @@
+{% macro brand_logo(large = false) %}
+{% set url_svg = url('theme://images/logo-white.svg') %}
+{% set url_img = url('theme://images/logo-white.png') %}
+{% set url_img2x = url('theme://images/logo-white@2x.png') %}
+<img class="site-navbar__brand-image" alt="logo" srcset="{{ url_svg }}, {{ url_img }}, {{ url_img2x }} 2x" />
+{% endmacro %}

@@ -1,0 +1,37 @@
+{% extends 'master/main.html.twig' %}
+
+{# Find page title #}
+{% if page.header['page-title'] is defined %}
+{% set page_title = page.header['page-title']|markdown %}
+{% elseif page.header.page_title is defined %}
+{% set page_title = page.header.page_title|markdown %}
+{% else %}
+{% set page_title = page.title %}
+{% endif %}
+
+{# Find page subtitle #}
+{% if page.header['page-subtitle'] is defined %}
+{% set page_subtitle = page.header['page-subtitle']|markdown %}
+{% elseif page.header.page_subtitle is defined %}
+{% set page_subtitle = page.header.page_subtitle|markdown %}
+{% else %}
+{% set page_subtitle = null %}
+{% endif %}
+
+{% block content_body %}
+    <article class="page-content">
+      <div class="page-content__content">
+        <header class="page-content__header">
+          {% if page_subtitle %}
+          <h1 class="page-content__title page-content__title--no-border">{{ page_title }}</h1>
+          <h2 class="page-content__subtitle">{{ page_subtitle }}</h2>
+          {% else %}
+          <h1 class="page-content__title">{{ page_title }}</h1>
+          {% endif %}
+        </header>
+        <div class="page-content__inner">
+          {{ page.content }}
+        </div>
+      </div>
+    </article>
+{% endblock %}

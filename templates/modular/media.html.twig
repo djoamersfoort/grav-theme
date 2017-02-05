@@ -1,0 +1,26 @@
+{% set content_blocks = build_lead(page.rawmarkdown, '---') %}
+{% if page.header.position is defined and page.header.position == 'right' %}
+{% set mediaPosition = 'right' %}
+{% else %}
+{% set mediaPosition = 'left' %}
+{% endif %}
+{% set backgroundColor = page.header.colour|default('blue-alt') %}
+{% set images = page.media.images %}
+
+<div class="mod-media mod-media--{{ mediaPosition }} mod-media--bg-{{ backgroundColor }}">
+  <div class="mod-media__content">
+    {% if images|length > 0 %}
+    {% set image = (images|first).cropResize(300, 600) %}
+    <div class="mod-media__graphic">
+      <img src="{{ image.url }}" class="mod-media__graphic-img" />
+    </div>
+    {% endif %}
+    <div class="mod-media__text">
+      <h2 class="mod-media__header">{{ page.title }}</h2>
+      {% if content_blocks[0] %}
+      <p class="mod-media__lead">{{ content_blocks[0] }}</p>
+      {% endif %}
+      {{ content_blocks[1] }}
+    </div>
+  </div>
+</div>

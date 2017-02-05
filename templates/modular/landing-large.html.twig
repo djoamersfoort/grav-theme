@@ -1,0 +1,22 @@
+{% set content_blocks = build_lead(page.rawmarkdown, '---', true, true) %}
+{% set images = page.media.images %}
+
+{% if images|length > 0 %}
+{% set image = (images|first).cropResize(1920, 600) %}
+{% if not page.headers.image_as_is %}
+{% set image = image.brightness(-50).colorize(-15, 10, 95) %}
+{% endif %}
+  <div class="homepage-landing homepage-landing--with-background"
+    style="background-image: url({{ image.url|e('html_attr') }})">
+{% else %}
+  <div class="homepage-landing">
+{% endif %}
+  <div class="homepage-landing__content">
+    <p class="homepage-landing__lead">
+      {{ content_blocks[0]|default(page.title) }}
+    </p>
+    <p class="homepage-landing__sub">
+      {{ content_blocks[1] }}
+    </p>
+  </div>
+</div>

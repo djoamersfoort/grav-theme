@@ -1,0 +1,75 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{% if header.title %}
+{% set site_title = header.title ~ ' | ' ~ site.title %}
+{% else %}
+{% set site_title = site.title %}
+{% endif %}
+
+{# Add JS #}
+{% do assets.addJs('theme://js-compiled/vendor.min.js', { priority: 100, group: 'bottom'}) %}
+{% do assets.addJs('theme://js-compiled/theme.min.js', { priority: 99, group: 'bottom'}) %}
+
+{# Add CSS #}
+{% do assets.addCss('theme://css-compiled/theme.min.css', 100) %}
+{% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 5) %}
+
+<!doctype html>
+<html lang="nl">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{ site_title|e('html') }}</title>
+
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}{% endblock %}
+    {% block javascripts %}{% endblock %}
+
+    {{ assets.css() }}
+    {{ assets.js() }}
+{% endblock %}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+
+<a href="#main-content" class="skip-to-content">Skip to content</a>
+
+{% block header %}
+{% include 'partials/sections/site-header.html.twig' %}
+{% endblock %}
+
+<main class="site-content" id="main-content">
+{% block body %}
+  <div class="site-content__body">
+      {% block content %}{% endblock %}
+  </div>
+{% endblock %}
+</main>
+
+<footer class="site-footers" id="main-footer">
+{% block footer %}
+<div class="site-footer__credits">
+  <div class="site-footer__credit site-footer__credit--copyright">
+
+  </div>
+  <div class="site-footer__credit site-footer__credit--copyright">
+
+  </div>
+</div>
+<div class="site-footer__source">
+  <p>
+    <a href="http://getgrav.org">Grav</a> was <i class="fa fa-code" aria-label="developed"></i> with <i class="fa fa-heart" aria-label="love"></i> by <a href="https://www.rockettheme.com" rel="nofollow">RocketTheme</a>.
+  </p>
+</div>
+{% endblock %}
+</footer>
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+
+</body>

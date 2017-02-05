@@ -1,0 +1,74 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{% if header.title %}
+{% set site_title = header.title ~ ' | ' ~ site.title %}
+{% else %}
+{% set site_title = site.title %}
+{% endif %}
+{% set site_root = base_url == '' ? '/' : base_url %}
+{% set site_logo_svg = url('theme://images/logo-full-white.svg') %}
+<!doctype html>
+<html>
+  <head>
+    {# Contents of <head> tag #}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{ site_title|e('html') }}</title>
+
+    {# Metadata #}
+    <!-- Meta -->
+    {# TODO #}
+
+    {# Stylesheets #}
+    {% do assets.addCss('theme://css-compiled/theme.min.css', 100) %}
+    {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 5) %}
+
+    {# Javascript #}
+    {% do assets.addJs('theme://js-compiled/vendor.min.js', { priority: 100, group: 'bottom'}) %}
+    {% do assets.addJs('theme://js-compiled/theme.min.js', { priority: 99, group: 'bottom'}) %}
+
+    <!-- Stylesheets -->
+    {{ assets.css() }}
+
+    <!-- Javascripts -->
+    {{ assets.js() }}
+  </head>
+  <body>
+    <!-- Jump to content link -->
+    <a href="#content" class="site-skip-to-content">Spring naar inhoud</a>
+
+    <!-- Header -->
+    {% include 'master/site/header.html.twig' %}
+
+    <!-- Content -->
+    <main class="site-main" id="main-content">
+    {% block content_body %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="site-footer__content">
+        <div class="site-footer__left">
+          &copy; <a href="/">De Jonge Onderzoekers</a> &mdash;
+          <a href="/contact">Contact</a> &mdash;
+          <a href="/over">Over ons</a>
+        </div>
+
+        <div class="site-footer__right">
+          <i class="fa fa-facebook" role="presentation"></i> <a href="https://facebook.com/djoamersfoort">Facebook</a> &mdash;
+          <i class="fa fa-github" role="presentation"></i> <a href="https://github.com/djoamersfoort">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+
+    {# Javascripts #}
+    {{ assets.js('bottom') }}
+  </body>
+</html>
+<!--
+  (c) Stichting De Jonge Onderzoekers Amersfoort
+
+  Site-design by Roelof <https://github.com/roelofr>
+  Powered by Grav <https://getgrav.com>
+-->

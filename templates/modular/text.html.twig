@@ -1,0 +1,12 @@
+{% set content_blocks = build_lead(page.rawmarkdown, '---') %}
+{% set backgroundColor = page.header.colour|default('blue-alt') %}
+
+<div class="mod-text mod-text--bg-{{ backgroundColor }}">
+  <div class="mod-text__content">
+    <h2 class="mod-text__header">{{ page.title }}</h2>
+    {% if content_blocks[0] %}
+    <p class="mod-text__lead">{{ content_blocks[0] }}</p>
+    {% endif %}
+    {{ content_blocks[1] }}
+  </div>
+</div>
