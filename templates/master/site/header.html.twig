@@ -19,8 +19,11 @@
         {{ page.menu ~ current_page_text }}
       </label>
       <div class="dropdown-menu site-nav__dropdown">
+        {# Hide page-owns for now #}
+        {#
         <a class="dropdown-item" href="{{ page.url }}">{{ page.menu }}</a>
         <div class="dropdown-divider"></div>
+        #}
   {% for p in page.children.visible %}
         <a class="dropdown-item" href="{{ p.url }}">{{ p.menu }}</a>
   {% endfor %}
