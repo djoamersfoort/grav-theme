@@ -21,7 +21,8 @@
 
     {# Stylesheets #}
     {% do assets.addCss('theme://css-compiled/theme.min.css', 100) %}
-    {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 5) %}
+    {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') %}
+    {% do assets.addCss('https://fonts.googleapis.com/css?family=Nunito:200,400') %}
 
     {# Javascript #}
     {% do assets.addJs('theme://js-compiled/vendor.min.js', { priority: 100, group: 'bottom'}) %}
