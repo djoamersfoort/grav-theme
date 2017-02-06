@@ -9,10 +9,12 @@
       <i class="fa {{ "fa-#{bannerIcon}" }} fa-fw"></i>
     </div>
     {% endif %}
-    <h2 class="mod-category__header">{{ page.title }}</h2>
-    {% if content_blocks[0] %}
-    <p class="mod-category__lead">{{ content_blocks[0] }}</p>
-    {% endif %}
-    {{ content_blocks[1] }}
+    <div class="mod-category__inner">
+      <h2 class="mod-category__header">{{ page.title }}</h2>
+      {% if content_blocks[0] %}
+      <p class="mod-category__lead">{{ content_blocks[0] }}</p>
+      {% endif %}
+      {{ content_blocks[1] }}
+    </div>
   </div>
 </div>

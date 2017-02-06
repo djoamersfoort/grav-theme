@@ -2008,8 +2008,8 @@ body{height:100%;color:#282828;background-color:#282828}
 .page-content__title::after{display:block;height:.5rem;margin:.5rem 0 0 0;border:0 solid #180f75;border-left-width:4rem;content:''}
 .page-content__title--no-border::after{display:none}
 .page-content__subtitle{margin-bottom:.5rem;font-family:Nunito,sans-serif;font-weight:400;line-height:1.1;color:inherit;font-size:1.4rem;font-style:normal;font-weight:200;color:rgba(40,40,40,.75)}
-.page-content__title+.page-content__subtitle::after{display:block;height:.5rem;margin:.5rem 0 0 0;border:0 solid #180f75;border-left-width:4rem;content:''}
 .page-content__title+.page-content__subtitle{margin-top:-.5rem}
+.page-content__title+.page-content__subtitle::after{display:block;height:.5rem;margin:.5rem 0 0 0;border:0 solid #180f75;border-left-width:4rem;content:''}
 .page-content__inner{padding:1rem;background:#fff}
 .homepage-landing{padding:1.25rem 0;background-color:#3d3875;background-image:url(../images/landing-brand.svg);background-position:bottom right;background-repeat:no-repeat;background-size:contain}
 .homepage-landing__content{position:relative;margin-left:auto;margin-right:auto;padding-right:15px;padding-left:15px}

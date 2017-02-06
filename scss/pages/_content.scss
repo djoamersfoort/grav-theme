@@ -34,9 +34,6 @@
 
     &__title + &__subtitle {
         @include add-blue-ridge-large;
-    }
-
-    &__title + &__subtitle {
         margin-top: -.5rem;
     }
 
