@@ -1,0 +1,59 @@
+{% macro loop(pages) %}
+{% for page in pages.children.visible %}
+{% set is_current_page = (page.active or page.activeChild) %}
+{% set current_page = is_current_page ? 'nav-side__link--active' : '' %}
+{% set current_page_text = is_current_page ? ' <span class="sr-only">(huidig)</span>'%}
+{% set link_class = 'nav-side__link ' ~ current_page %}
+{% if page.children.visible.count > 0 %}
+{% set link_name = "nav-side-toggle-#{loop.index}" %}
+    <li class="nav-side__item dropdown">
+      <input type="checkbox" id="{{ link_name }}" class="nav-side__dropdown-toggle" />
+      <label
+        role="button"
+        for="{{ link_name }}"
+        class="{{ link_class }} nav-side__link--dropdown dropdown-toggle"
+        data-single-select-group="nav-side-toggle"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        {{ page.menu ~ current_page_text }}
+      </label>
+      <div class="nav-side__dropdown">
+        {# Hide page-owns for now #}
+        {#
+        <a class="dropdown-item" href="{{ page.url }}">{{ page.menu }}</a>
+        <div class="dropdown-divider"></div>
+        #}
+  {% for p in page.children.visible %}
+        <a class="nav-side__dropdown-item" href="{{ p.url }}">{{ p.menu }}</a>
+  {% endfor %}
+      </div>
+    </li>
+{% else %}
+    <li class="nav-side__item">
+      <a href="{{ page.url }}"
+        class="{{ link_class }}">
+        {{ page.menu ~ current_page_text }}
+      </a>
+    </li>
+{% endif %}
+{% endfor %}
+{% endmacro %}
+
+{% macro build(items) %}
+{# Define site root #}
+{% set site_root = base_url == '' ? '/' : base_url %}
+{% set site_logo_svg = url('theme://images/logo-full-white.svg') %}
+
+<input type="checkbox" class="nav-side-toggle" id="navbar-offcanvas-toggle">
+<nav class="nav-side" id="navbar-offcanvas">
+  <a class="nav-side__brand" href="{{ site_root }}">
+    <img src="{{ site_logo_svg }}"
+      class="nav-side__brand-logo"
+      alt="Stichting De Jonge Onderzoekers Amersfoort" />
+  </a>
+  <ul class="nav-side__nav">
+{{ _self.loop(items) }}
+  </ul>
+</nav>
+{% endmacro %}

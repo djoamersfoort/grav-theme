@@ -50,6 +50,12 @@ $c-blue-brand-t25:  transparentize($c-blue-brand, .25);
 $c-blue-brand-t50:  transparentize($c-blue-brand, .5);
 $c-blue-brand-t75:  transparentize($c-blue-brand, .75);
 
+// Blends
+$c-nav-side-item:           mix($c-black, $c-white, 30%);
+$c-nav-side-item-hover:     mix($c-black, $c-white, 20%);
+$c-nav-side-item-active:    mix($c-black, $c-white, 10%);
+$c-nav-side-item-disabled:  mix($c-black, $c-white, 45%);
+
 // DIMENSIONS
 $grid-gutter: rem(20px);
 
@@ -61,6 +67,7 @@ $page-header-height-small: rem(150px);
 $navbar-brand-size: rem(30px);
 $navbar-brand-size-large: $navbar-brand-size * 2;
 $navbar-item-bottom-border: 4px;
+$navbar-offcanvas-width: 300px;
 
 //
 // BOOTSTRAP 4
@@ -72,6 +79,9 @@ $enable-flex: true;
 // FONTS
 $headings-font-family: 'Nunito', sans-serif;
 $headings-font-weight: 400;
+
+// BREAKPOINTS
+$nav-breakpoint: lg;
 
 // EFFECTS - BLUE RIDGE
 $blue-ridge-height: .5rem;

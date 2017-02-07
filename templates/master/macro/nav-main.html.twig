@@ -1,0 +1,47 @@
+{% macro loop(pages) %}
+{% for page in pages.children.visible %}
+{% set is_current_page = (page.active or page.activeChild) %}
+{% set current_page = is_current_page ? 'nav-main__link--active' : '' %}
+{% set current_page_text = is_current_page ? ' <span class="sr-only">(huidig)</span>'%}
+{% set link_class = 'nav-main__link ' ~ current_page %}
+{% if page.children.visible.count > 0 %}
+{% set link_name = "nav-main-toggle-#{loop.index}" %}
+    <li class="nav-main__item dropdown">
+      <input type="checkbox" id="{{ link_name }}" class="nav-main__dropdown-toggle" />
+      <label
+        role="button"
+        for="{{ link_name }}"
+        class="{{ link_class }} nav-main__link--dropdown dropdown-toggle"
+        data-single-select-group="nav-main-toggle"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        {{ page.menu ~ current_page_text }}
+      </label>
+      <div class="nav-main__dropdown">
+        {# Hide page-owns for now #}
+        {#
+        <a class="dropdown-item" href="{{ page.url }}">{{ page.menu }}</a>
+        <div class="dropdown-divider"></div>
+        #}
+  {% for p in page.children.visible %}
+        <a class="nav-main__dropdown-item" href="{{ p.url }}">{{ p.menu }}</a>
+  {% endfor %}
+      </div>
+    </li>
+{% else %}
+    <li class="nav-main__item">
+      <a href="{{ page.url }}"
+        class="{{ link_class }}">
+        {{ page.menu ~ current_page_text }}
+      </a>
+    </li>
+{% endif %}
+{% endfor %}
+{% endmacro %}
+
+{% macro build(items) %}
+  <ul class="site-header__nav-top nav-main__nav">
+{{ _self.loop(items) }}
+  </ul>
+{% endmacro %}

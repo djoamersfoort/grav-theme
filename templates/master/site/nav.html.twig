@@ -1,0 +1,23 @@
+{% from 'master/macro/nav-main.html.twig' import build as mainNav %}
+{% from 'master/macro/nav-side.html.twig' import build as sideNav %}
+
+{# Define site root #}
+{% set site_root = base_url == '' ? '/' : base_url %}
+{% set site_logo_svg = url('theme://images/logo-full-white.svg') %}
+
+{{ sideNav(pages) }}
+
+<header class="site-header">
+  <div class="site-header__container">
+    <a class="site-header__brand" href="{{ site_root }}">
+      <img src="{{ site_logo_svg }}"
+        class="site-header__brand-logo"
+        alt="Stichting De Jonge Onderzoekers Amersfoort" />
+    </a>
+   <label class="site-header__toggler" for="navbar-offcanvas-toggle"
+    aria-label="Toggle navigation">
+     <span class="site-header__toggler-icon"></span>
+   </label>
+{{ mainNav(pages) }}
+  </div>
+</header>

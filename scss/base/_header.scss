@@ -3,17 +3,12 @@
 //
 
 .site-header {
-
-    display: block;
+    display: flex;
     padding: 1em 0;
     background-color: $c-blue-brand;
 
     &--home {
         background-color: transparent;
-    }
-
-    @include media-breakpoint-down(sm) {
-        display: none;
     }
 
     &__container {
@@ -31,86 +26,21 @@
         min-height: 1;
     }
 
+    &__toggler {
+        @extend .navbar-toggler;
+        align-self: auto;
+        order: 3;
+        border-color: $navbar-inverse-toggler-border;
+    }
+
+    &__toggler-icon {
+        @extend .navbar-toggler-icon;
+        background-image: $navbar-inverse-toggler-bg;
+    }
+
     &__nav-top {
         order: 2;
         min-height: 1;
-    }
-}
-
-.site-nav {
-    display: flex;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-
-    &__item {
-        @extend .nav-item;
-
-        display: inline-flex;
-    }
-
-    &__dropdown-toggle {
-        display: none;
-    }
-
-    &__link {
-        display: block;
-        padding: $nav-link-padding;
-        margin-bottom: 0;
-
-        color: $c-white;
-        background-color: transparent;
-        border: 0 solid transparent;
-        border-bottom-width: $navbar-item-bottom-border;
-
-        transition: border-bottom-color .25s;
-
-        @include hover-focus {
-            color: $c-white;
-            text-decoration: none;
-            border-color: $c-white-t75;
-        }
-
-        &--dropdown::after {
-            @extend .dropdown-toggle::after;
-        }
-
-        &:active,
-        &--active,
-        &--active:focus,
-        &--active:hover,
-        .site-nav__dropdown-toggle:checked ~ & {
-            color: $c-white;
-            cursor: default;
-            border-color: $c-white-t25;
-        }
-    }
-
-    &__dropdown-toggle:checked ~ &__dropdown {
-        display: block;
-    }
-}
-
-.site-nav__dropdown {
-    top: calc(100% + 1rem);
-    margin-top: 0;
-
-    color: $c-white;
-    background-color: $c-blue-brand;
-    border-width: 0;
-    border-radius: 0;
-
-    .dropdown-item {
-        color: $c-white;
-
-        @include hover-focus {
-            color: $c-white;
-            background-color: $c-black-t50;
-        };
-    }
-
-    .dropdown-divider {
-        background-color: $c-white-t50;
     }
 }
 
@@ -126,4 +56,16 @@
     @include make-brand;
 
     display: flex;
+}
+
+@include media-breakpoint-up($nav-breakpoint) {
+    .site-header {
+        &__toggler {
+            display: none;
+        }
+
+        &__nav {
+            display: none;
+        }
+    }
 }

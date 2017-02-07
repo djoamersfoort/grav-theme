@@ -1,0 +1,93 @@
+//
+// Creates a basic nav with dropdowns and other fun stuff.
+//
+
+@mixin make-site-nav {
+    display: flex;
+    flex-flow: row nowrap;
+
+    &__nav {
+        display: flex;
+        flex-flow: row nowrap;
+
+        padding-left: 0;
+        margin: 0;
+
+        list-style: none;
+    }
+
+    &__item {
+        @extend .nav-item;
+        display: inline-flex;
+    }
+
+    &__link {
+        @extend .nav-link;
+        margin-bottom: 0;
+
+        color: $c-white;
+        background-color: transparent;
+        border: 0 solid transparent;
+
+        transition: border-color .25s;
+
+        @include hover-focus {
+            color: $c-white;
+            text-decoration: none;
+            border-color: $c-white-t75;
+        };
+
+        &--dropdown::after {
+            @extend .dropdown-toggle::after;
+            transition: transform .25s;
+
+            .dropdown.show & {
+                transform: rotateZ(180deg);
+            }
+        }
+
+        &:active,
+        &.active,
+        &--active,
+        &--active:focus,
+        &--active:hover,
+        input:checked ~ & {
+            color: $c-white;
+            cursor: default;
+            border-color: $c-white;
+        }
+    }
+
+    // Dropdown toggle, invisible checkbox for js-free dropdowns
+    &__dropdown-toggle {
+        display: none;
+    }
+
+    &__dropdown {
+        @extend .dropdown-menu;
+        display: none;
+
+        border-width: 0;
+        border-radius: 0;
+    }
+
+    &__dropdown-item {
+        @extend .dropdown-item;
+        color: $c-white;
+
+        @include hover-focus {
+            color: $c-white;
+            text-decoration: underline;
+            background-color: transparent;
+        }
+    }
+
+    &__dropdown-divider {
+        @extend .dropdown-divider;
+        background-color: $c-white-t50;
+    }
+
+    &__dropdown-toggle:checked ~ &__dropdown {
+        display: block;
+    }
+}
