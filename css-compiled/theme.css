@@ -7391,7 +7391,8 @@ body {
                 -ms-flex-wrap: nowrap;
                     flex-wrap: nowrap;
                 -ms-flex-pack: start;
-                    justify-content: flex-start; } }
+                    justify-content: flex-start;
+                text-align: center; } }
     .mod-story__inner {
         position: relative;
         width: 100%;
