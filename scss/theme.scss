@@ -6,18 +6,22 @@
 //
 
 // Load functions and mixins
+@import '../node_modules/djoamersfoort-theme/scss/functions';
 @import 'functions';
 
 // Load variables
+@import '../node_modules/djoamersfoort-theme/scss/variables';
 @import 'variables';
 
 // Load bootstrap and others
 @import 'vendor';
 
 // Load our mixins
+@import '../node_modules/djoamersfoort-theme/scss/mixins';
 @import 'mixins';
 
 // Load base stylesheets
+@import '../node_modules/djoamersfoort-theme/scss/base';
 @import 'base';
 
 // Load stylesheets for pages and modules
@@ -25,4 +29,5 @@
 @import 'modules';
 
 // Load small tweaks that override other behaviour
+@import '../node_modules/djoamersfoort-theme/scss/tweaks';
 @import 'tweaks';

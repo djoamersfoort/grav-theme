@@ -1,5 +1,5 @@
 {
-  "name": "djoamersfoort-theme",
+  "name": "djoamersfoort-grav-theme",
   "description": "DJO-branded theme for Grav",
   "version": "1.0.0",
   "license": "GPL-3.0",
@@ -15,6 +15,7 @@
   "devDependencies": {
     "autoprefixer": "^6.5.0",
     "bootstrap": "^4.0.0-alpha.6",
+    "djoamersfoort-theme": "github:djoamersfoort/theme",
     "es6-promise": "^4.0.0",
     "eslint": "^3.10.0",
     "eslint-config-google": "^0.7.0",

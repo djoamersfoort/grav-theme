@@ -6,21 +6,4 @@
 //
 
 // Load bootstrap
-$use-flexbox: true;
-
 @import '../node_modules/bootstrap/scss/bootstrap';
-
-// Fonts
-@font-face {
-    font-family: 'bpreplay';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/bpreplay-webfont.woff2') format('woff2'), url('../fonts/bpreplay-webfont.woff') format('woff'), url('../fonts/bpreplay-webfont.svg#bpreplayregular') format('svg');
-}
-
-@font-face {
-    font-family: 'bpreplay';
-    font-style: normal;
-    font-weight: bold;
-    src: url('../fonts/bpreplaybold-webfont.woff2') format('woff2'), url('../fonts/bpreplaybold-webfont.woff') format('woff'), url('../fonts/bpreplaybold-webfont.svg#bpreplaybold') format('svg');
-}

@@ -4,24 +4,3 @@
 // @author Roelof Roos <github@roelof.io>
 // @license LGPL-3.0
 //
-
-// Load basic styling rules
-@import 'base/body';
-
-// Load basic page components
-@import 'base/header';
-@import 'base/content';
-@import 'base/footer';
-
-// navbars
-@import 'base/nav-main';
-@import 'base/nav-side';
-
-// Load standalone elements
-@import 'base/skip-to-content';
-
-// Load debug elements
-@import 'base/debug';
-
-// Load more specific components
-// @import 'base/page-cover' optional;
